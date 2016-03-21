@@ -1,7 +1,7 @@
-require 'spherical_distance_calculator'
+require 'intercom_distance'
 
-describe SphericalDistanceCalculator do
-  let(:calculator){SphericalDistanceCalculator.new}
+describe IntercomDistance do
+  let(:calculator){IntercomDistance.new}
 
   it "#extract_customer_data returns an array of data" do
     customer_data = calculator.extract_customer_data("test_examples.txt")

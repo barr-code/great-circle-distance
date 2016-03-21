@@ -1,6 +1,6 @@
 require 'json'
 
-class SphericalDistanceCalculator
+class IntercomDistance
   INTERCOM_LATITUDE = 53.3381985
   INTERCOM_LONGITUDE = -6.2592576
   EARTH_RADIUS_IN_KM = 6371.0
