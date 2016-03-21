@@ -16,3 +16,6 @@ $ irb
 > intercom.print_nearby_customers("test_examples.txt")
 > intercom.print_nearby_customers("customers.txt")
 ```
+
+### My proudest accomplishment
+You can read about what I consider one of my proudest accomplishments [here]("accomplishment.md").
