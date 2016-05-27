@@ -1,11 +1,16 @@
 require 'json'
 
-class IntercomDistance
-  INTERCOM_LATITUDE = 53.3381985
-  INTERCOM_LONGITUDE = -6.2592576
+class DistanceCalculator
   EARTH_RADIUS_IN_KM = 6371.0
   RADIAN_DEGREE_RATIO = Math::PI / 180.0
-  MAXIMUM_DISTANCE = 100 # kilometers from Intercom
+  MAXIMUM_DISTANCE = 100
+
+  attr_reader :origin_longitude, :origin_latitude
+
+  def initialize(longitude, latitude)
+    @origin_longitude = longitude
+    @origin_latitude = latitude
+  end
 
   def extract_customer_data(file_name)
     customer_data = []
@@ -25,8 +30,8 @@ class IntercomDistance
   end
 
   def calculate_radial_distance(latitude, longitude)
-    lat_1 = convert_to_radians(INTERCOM_LATITUDE)
-    long_1 = convert_to_radians(INTERCOM_LONGITUDE)
+    lat_1 = convert_to_radians(origin_latitude)
+    long_1 = convert_to_radians(origin_longitude)
     lat_2 = convert_to_radians(latitude)
     long_2 = convert_to_radians(longitude)
     long_diff = long_1 - long_2

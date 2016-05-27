@@ -11,11 +11,8 @@ To find nearby users, either with the sample .txt file or your own:
 
 ```
 $ irb
-> require './lib/intercom_distance'
-> intercom = IntercomDistance.new
-> intercom.print_nearby_customers("test_examples.txt")
-> intercom.print_nearby_customers("customers.txt")
+> require './lib/distance_calculator'
+> calculator = DistanceCalculator.new
+> calculator.print_nearby_customers("test_examples.txt")
+> calculator.print_nearby_customers("customers.txt")
 ```
-
-### My proudest accomplishment
-You can read about what I consider one of my proudest accomplishments [here](accomplishment.md).

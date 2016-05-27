@@ -1,5 +1,0 @@
-###My Proudest Accomplishment
-
-Last year, my team was experience a problem with a large volume of undelivered push notifications. We were using the Houston gem to send messages to our iOS users, but test notifications sent out were not being received, and our logs weren't showing any errors. After looking into the problem to see how we could catch and log errors, I noticed that there were a number of issues open on the gem's Github repo, complaining about the "silent failure" problem.
-
-Realizing this was a problem that a) affected my own team and many others and b) did not yet have a solution, though it had existed for quite some time, I took some time to dig into Houston's source code. I wrote a patch that allowed us to successfully catch APNS errors through the gem and applied it to the project I was working on, where it is current running on the production server. After seeing that error handling was working properly with the help of my patch, I opened a pull-request to the master branch of the Houston repo. It hasn't been merged in yet, but I am confident that if they did merge it, it would help a lot of other people as much as it helped my own team.

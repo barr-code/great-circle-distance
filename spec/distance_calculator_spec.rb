@@ -1,7 +1,7 @@
-require 'intercom_distance'
+require 'distance_calculator'
 
-describe IntercomDistance do
-  let(:calculator){IntercomDistance.new}
+describe DistanceCalculator do
+  let(:calculator){DistanceCalculator.new(-6.2592576, 53.3381985)}
 
   it "#extract_customer_data returns an array of data" do
     customer_data = calculator.extract_customer_data("test_examples.txt")
@@ -27,19 +27,19 @@ describe IntercomDistance do
     expect(calculator.calculate_radial_distance(0,0).is_a?(Float)).to be true
   end
 
-  it "#calculate_radial_distance finds distance in terms of earth's radius from Intercom" do
+  it "#calculate_radial_distance finds distance in terms of earth's radius from origin point" do
     expect(calculator.calculate_radial_distance(0,0).round(3)).to eq 0.935
   end
 
-  it "#calculate_radial_distance returns 0 for Intercom's coordinates" do
+  it "#calculate_radial_distance returns 0 for origin's own coordinates" do
     expect(calculator.calculate_radial_distance(53.3381985, -6.2592576)).to eq 0
   end
 
-  it "#calculate_distance_km returns 0 for Intercom's coordinates" do
+  it "#calculate_distance_km returns 0 for origin's own coordinates" do
     expect(calculator.calculate_distance_km(53.3381985, -6.2592576)).to eq 0
   end
 
-  it "#calculate_distance_km finds the distance in km between coordinates and Intercom" do
+  it "#calculate_distance_km finds the distance in km between input coordinates and origin coordinates" do
     expect(calculator.calculate_distance_km(0, 0).ceil).to eq 5960
   end
 
